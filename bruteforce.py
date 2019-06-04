@@ -4,20 +4,17 @@ def decrypt(n, ciphertext):
     result = ''
     
     for x in ciphertext:
-        try:
-            index = KEY.index(x)
-            i = (index * n) % 26
-            result = i
-        except Valueerror:
-            result += i
+        index = KEY.index(x)
+        i = (index * n) % 26
+        result = i
     return result
     
-for n in range(0,25):
-    dec1 = decrypt(n,'d')
-    dec2 = decrypt(n,'a')
-    dec3 = decrypt(n,'f')
-    dec4 = decrypt(n,'l')
-    dec5 = decrypt(n,'a')
-    dec6 = decrypt(n,'w')
-    print ("%d . %s %s %s %s %s %s" % (n,dec1,dec2,dec3,dec4,dec5,dec6))
-    
+for n in range(0,26):
+    dec1 = decrypt(n,'c')
+    dec2 = decrypt(n,'k')
+    dec3 = decrypt(n,'q')
+    dec4 = decrypt(n,'b')
+    dec5 = decrypt(n,'q')
+    dec6 = decrypt(n,'y')
+    print ("%d . %s%s%s%s%s%s" % (n,chr(dec1 + 97),chr(dec2 + 97),chr(dec3 + 97),
+    chr(dec4 + 97),chr(dec5 + 97),chr(dec6 + 97)))
